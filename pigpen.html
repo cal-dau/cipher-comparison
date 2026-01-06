@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pigpen Cipher</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Pigpen Cipher</h1>
+  <nav><a href="index.html">Home</a></nav>
+</header>
+<main>
+  <h2>Historical Context</h2>
+  <p>Used by European groups like Freemasons in the 1700s; replaces letters with symbols.</p>
+  
+  <h2>How It Works</h2>
+  <p>Each letter is mapped to a symbol based on geometric grids.</p>
+  
+  <h2>Try It!</h2>
+  <textarea id="pigpenInput"></textarea><br>
+  <button onclick="runPigpen()">Encode</button>
+  <div class="output" id="pigpenOut"></div>
+</main>
+<script src="script.js"></script>
+<script>
+function runPigpen() {
+  const txt = document.getElementById("pigpenInput").value;
+  document.getElementById("pigpenOut").innerText = pigpenCipher(txt);
+}
+</script>
+</body>
+</html>
