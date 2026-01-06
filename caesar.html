@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Caesar Cipher</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Caesar Cipher</h1>
+  <nav><a href="index.html">Home</a></nav>
+</header>
+<main>
+  <h2>Historical Context</h2>
+  <p>Used by Julius Caesar around 50 BC to encrypt military messages by shifting letters.</p>
+  
+  <h2>How It Works</h2>
+  <p>Shifts letters by a fixed number (key). E.g., shift 3 turns A → D.</p>
+  
+  <h2>Try It!</h2>
+  <textarea id="caesarInput"></textarea><br>
+  <label>Shift: <input id="caesarShift" type="number" value="3"></label><br>
+  <button onclick="runCaesar(true)">Encrypt</button>
+  <button onclick="runCaesar(false)">Decrypt</button>
+  <div class="output" id="caesarOut"></div>
+</main>
+<script src="script.js"></script>
+<script>
+function runCaesar(encrypt) {
+  const txt = document.getElementById("caesarInput").value;
+  const shift = parseInt(document.getElementById("caesarShift").value);
+  document.getElementById("caesarOut").innerText =
+    caesarCipher(txt, shift, encrypt);
+}
+</script>
+</body>
+</html>
