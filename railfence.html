@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rail Fence Cipher</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Rail Fence Cipher</h1>
+  <nav><a href="index.html">Home</a></nav>
+</header>
+<main>
+  <h2>Historical Context</h2>
+  <p>A simple transposition cipher used in the 19th century — writing diagonally over rails.</p>
+  
+  <h2>How It Works</h2>
+  <p>Text zig-zags over “rails” then is read row-by-row.</p>
+  
+  <h2>Try It!</h2>
+  <textarea id="railInput"></textarea><br>
+  <label>Rails: <input id="railCount" type="number" value="3"></label><br>
+  <button onclick="runRail(true)">Encrypt</button>
+  <button onclick="runRail(false)">Decrypt</button>
+  <div class="output" id="railOut"></div>
+</main>
+<script src="script.js"></script>
+<script>
+function runRail(encrypt) {
+  const txt = document.getElementById("railInput").value;
+  const rails = parseInt(document.getElementById("railCount").value);
+  document.getElementById("railOut").innerText = railFence(txt, rails, encrypt);
+}
+</script>
+</body>
+</html>
